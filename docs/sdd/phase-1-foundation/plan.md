@@ -1,27 +1,17 @@
 # Phase 1 — Plan
 
-> **Agent instructions:** Read `description.md` in this same directory in
-> full before writing anything below. Break the phase down into your own
-> ordered list of concrete implementation steps (schema, migrations,
-> endpoints/screens, tests, etc.). Replace this template's example
-> structure with your own — it is a starting shape, not a fixed list.
-> Check each box off (`[x]`) only when that step is fully done and
-> verified against the acceptance criteria in `description.md`. Do not
-> check a box off in advance of doing the work.
->
-> If you discover during planning that something in `description.md` is
-> ambiguous, missing, or contradicts an earlier phase, stop and note it in
-> the "Open questions" section below instead of guessing.
-
-## Steps
-
-- [ ] Step 1 — *(agent: replace with the first concrete task)*
-- [ ] Step 2 — ...
-- [ ] Step 3 — ...
+- [x] Step 1 — Setup Phase 1 Git branch and structure
+- [x] Step 2 — Define reusable audit and soft-delete patterns (with unit tests)
+- [x] Step 3 — Implement User, Role, and Permission data models with audit/soft-delete (with unit/integration tests)
+- [ ] Step 4 — Implement Authentication (Login/Logout/Password Change) (with unit/integration tests)
+- [ ] Step 5 — Implement Item and Category data models with audit/soft-delete (with unit tests)
+- [ ] Step 6 — Implement Warehouse/Location hierarchy data model (with unit tests)
+- [ ] Step 7 — Implement Location view logic (traversal) (with unit/integration tests)
+- [ ] Step 8 — Final verification of all acceptance criteria (and coverage report)
 
 ## Open questions / blockers
 
-- *(agent: list anything that needs a decision before proceeding)*
+- Need to determine which DB technology to use since I see build.gradle/settings.gradle.kts. Checking dependencies.
 
 ## Phase completion checklist
 
