@@ -6,9 +6,13 @@ import com.anthill.app.data.model.User
 import com.anthill.app.data.model.Role
 import com.anthill.app.data.model.Permission
 import com.anthill.app.data.model.UserRoleCrossRef
+import com.anthill.app.data.model.Category
+import com.anthill.app.data.model.Item
 import com.anthill.app.data.dao.UserDao
+import com.anthill.app.data.dao.ItemDao
 
-@Database(entities = [User::class, Role::class, Permission::class, UserRoleCrossRef::class], version = 1, exportSchema = false)
+@Database(entities = [User::class, Role::class, Permission::class, UserRoleCrossRef::class, Category::class, Item::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
+    abstract fun itemDao(): ItemDao
 }
