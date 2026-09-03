@@ -10,19 +10,42 @@ import org.mockito.Mockito.*
 
 class AuthViewModelTest {
 
+    private val userDao = mock(UserDao::class.java)
+    private val repo = AuthRepository(userDao)
+    private val viewModel = AuthViewModel(repo)
+
     @Test
-    fun loginSuccess() = runBlocking {
-        val userDao = mock(UserDao::class.java)
+    fun `should set loggedIn state when login credentials are valid`() = runBlocking {
         val user = User(id=1, username="sadra", passwordHash="pass", fullName="Sadra", createdBy="admin", updatedBy="admin", createdAt=0, updatedAt=0)
         `when`(userDao.getUserByUsername("sadra")).thenReturn(user)
-        
-        val repo = AuthRepository(userDao)
-        val viewModel = AuthViewModel(repo)
         
         viewModel.login("sadra", "pass")
         
         val state = viewModel.uiState.value
         assert(state is AuthState.LoggedIn)
         assertEquals("sadra", (state as AuthState.LoggedIn).username)
+    }
+
+    @Test
+    fun `should set error state when user does not exist`() = runBlocking {
+        `when`(userDao.getUserByUsername("sadra")).thenReturn(null)
+        
+        viewModel.login("sadra", "any_pass")
+        
+        val state = viewModel.uiState.value
+        assert(state is AuthState.Error)
+        assertEquals("Invalid credentials", (state as AuthState.Error).message)
+    }
+    
+    @Test
+    fun `should set error state when password does not match`() = runBlocking {
+        val user = User(id=1, username="sadra", passwordHash="pass", fullName="Sadra", createdBy="admin", updatedBy="admin", createdAt=0, updatedAt=0)
+        `when`(userDao.getUserByUsername("sadra")).thenReturn(user)
+        
+        viewModel.login("sadra", "wrong_pass")
+        
+        val state = viewModel.uiState.value
+        assert(state is AuthState.Error)
+        assertEquals("Invalid credentials", (state as AuthState.Error).message)
     }
 }
