@@ -3,7 +3,7 @@
 - [x] Step 1 — Setup Phase 1 Git branch and structure
 - [x] Step 2 — Define reusable audit and soft-delete patterns (with unit tests)
 - [x] Step 3 — Implement User, Role, and Permission data models with audit/soft-delete (with unit/integration tests)
-- [ ] Step 4 — Implement Authentication (Login/Logout/Password Change) (with unit/integration tests)
+- [x] Step 4 — Implement Authentication (Login/Logout/Password Change) (with unit/integration tests)
 - [ ] Step 5 — Implement Item and Category data models with audit/soft-delete (with unit tests)
 - [ ] Step 6 — Implement Warehouse/Location hierarchy data model (with unit tests)
 - [ ] Step 7 — Implement Location view logic (traversal) (with unit/integration tests)

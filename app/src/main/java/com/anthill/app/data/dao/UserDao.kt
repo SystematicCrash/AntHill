@@ -2,7 +2,6 @@ package com.anthill.app.data.dao
 
 import androidx.room.*
 import com.anthill.app.data.model.User
-import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface UserDao {
