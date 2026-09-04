@@ -5,7 +5,7 @@
 - [x] Step 3 — Implement User, Role, and Permission data models with audit/soft-delete (with unit/integration tests)
 - [x] Step 4 — Implement Authentication (Login/Logout/Password Change) (with unit/integration tests)
 - [x] Step 5 — Implement Item and Category data models with audit/soft-delete (with unit tests)
-- [ ] Step 6 — Implement Warehouse/Location hierarchy data model (with unit tests)
+- [x] Step 6 — Implement Warehouse/Location hierarchy data model (with unit tests)
 - [ ] Step 7 — Implement Location view logic (traversal) (with unit/integration tests)
 - [ ] Step 8 — Final verification of all acceptance criteria (and coverage report)
 
