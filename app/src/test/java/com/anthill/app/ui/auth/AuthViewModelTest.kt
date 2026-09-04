@@ -48,4 +48,20 @@ class AuthViewModelTest {
         assert(state is AuthState.Error)
         assertEquals("Invalid credentials", (state as AuthState.Error).message)
     }
+
+    @Test
+    fun `should set error state when username is blank`() = runBlocking {
+        viewModel.login("", "pass")
+        
+        val state = viewModel.uiState.value
+        assert(state is AuthState.Error)
+    }
+
+    @Test
+    fun `should set error state when password is blank`() = runBlocking {
+        viewModel.login("sadra", "")
+        
+        val state = viewModel.uiState.value
+        assert(state is AuthState.Error)
+    }
 }

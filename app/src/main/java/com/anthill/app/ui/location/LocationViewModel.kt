@@ -1,6 +1,7 @@
 package com.anthill.app.ui.location
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.anthill.app.data.dao.LocationDao
 import com.anthill.app.data.model.Location
@@ -41,4 +42,10 @@ sealed class LocationViewState {
     object Loading : LocationViewState()
     data class Success(val locations: List<Location>, val parent: Location?) : LocationViewState()
     data class Error(val message: String) : LocationViewState()
+}
+
+class LocationViewModelFactory(private val locationDao: LocationDao) : ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        return LocationViewModel(locationDao) as T
+    }
 }

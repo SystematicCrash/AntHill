@@ -7,15 +7,15 @@
 - [x] Step 5 — Implement Item and Category data models with audit/soft-delete (with unit tests)
 - [x] Step 6 — Implement Warehouse/Location hierarchy data model (with unit tests)
 - [x] Step 7 — Implement Location view logic (traversal) (with unit/integration tests)
-- [ ] Step 8 — Final verification of all acceptance criteria (and coverage report)
+- [x] Step 8 — Final verification of all acceptance criteria (and coverage report)
 
 ## Open questions / blockers
 
-- Need to determine which DB technology to use since I see build.gradle/settings.gradle.kts. Checking dependencies.
+- None.
 
 ## Phase completion checklist
 
-- [ ] All acceptance criteria in `description.md` are met
-- [ ] Data model deliverables listed in `description.md` exist
-- [ ] Nothing from the "explicitly out of scope" list was built
-- [ ] Ready to hand off to Phase 2
+- [x] All acceptance criteria in `description.md` are met
+- [x] Data model deliverables listed in `description.md` exist
+- [x] Nothing from the "explicitly out of scope" list was built
+- [x] Ready to hand off to Phase 2
